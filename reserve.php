@@ -1,6 +1,6 @@
 						<?php
 								session_start();
-        						$con = mysql_connect("localhost","root","root") or die("could not connect to database");;
+								$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
                                 if(! $con)
                                 {
                                     die('Connection Failed'.mysql_error());

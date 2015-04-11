@@ -18,10 +18,17 @@ if (!$link) {
 }
 
 $result = mysql_query("SELECT * FROM new_table WHERE user_name='$email'");
+#$result = mysql_query("SELECT * FROM new_table");
 if (!$result) {
 		echo $email;
     die('Invalid query select: ' . mysql_error());
 }
+
+#while ($rows=mysql_fetch_assoc($result))
+#{
+#	echo $rows;
+#	echo $rows['user_name'];
+#}
 
 $row = mysql_num_rows($result);
 if($row != 0)
