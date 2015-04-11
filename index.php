@@ -76,14 +76,14 @@
     </tr>
     </thead>
      <?php
-						$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','kcm','anujkhare') or die("could not connect to database");
+						$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','kcm','') or die("could not connect to database");
                                 if(! $con)
                                 {
                                     die('Connection Failed'.mysql_error());
                                 }
                                 session_start();
-                                $key = $_POST["bookname"];
-                                $_SESSION['books'] = $key;
+                                #$key = $_POST["bookname"];
+                                #$_SESSION['books'] = $key;
                                 mysql_select_db("new_schema1",$con);
                                 $sql = "SELECT User_Name, Book_Name, Sharing_Status, Days_Available, ISBN_Number, Phone_Number FROM new_table1";
                                 $retval = mysql_query( $sql, $con);
