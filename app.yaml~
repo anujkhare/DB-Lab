@@ -1,13 +1,10 @@
-application: dblab
+application: ancient-tractor-91116
 version: 1
 runtime: php
 api_version: 1
 module: default
 
 handlers:
-- url: /
-  script: index.php
-
 - url: /css
   static_dir: css
 
@@ -15,10 +12,15 @@ handlers:
   static_dir: images
 
 - url: /(.+\.php)$
-  script: \1
+  script: index.php
 
-- url: /(.+\.html)$
+- url: /(\w+\.html)$
   static_files: \1
-  upload: \1
+  upload: (\w)
+  mime_type: text/html
 
+- url: /
+  script: index.php
 
+- url: /.*
+  script: not_found.php
