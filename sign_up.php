@@ -2,7 +2,11 @@
 <body>
 <?php
 
-$con = mysql_connect("localhost","root","root") or die("could not connect to database");
+$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+if(! $con)
+{
+    die('Connection Failed'.mysql_error());
+}
 session_start();
 
 $email = $_POST["usernamesignup"];
@@ -22,7 +26,10 @@ if($pass != $pass_confirm)
 }
 
 // Select the database to use
- mysql_select_db("new_schema1") or die("could not find the database");
+$link = mysql_select_db("new_schema1") or die("could not find the database");
+if (!$link) {
+    die('Not connected : ' . mysql_error());
+}
 
 $sql="INSERT INTO new_table (user_name, password,sec_que)
 VALUES

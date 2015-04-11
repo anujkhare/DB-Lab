@@ -1,6 +1,6 @@
 <?php
 
-$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','kcm','') or die("could not connect to database");
+$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
 // Make sure we connected successfully
 if(! $con)
 {
@@ -12,16 +12,18 @@ $pass = $_POST["password"];
 // Connect to the database
 
 // Select the database to use
-mysql_select_db("new_schema1",$con);
+$link = mysql_select_db("new_schema1",$con);
+if (!$link) {
+    die('Not connected : ' . mysql_error());
+}
+
 $result = mysql_query("SELECT * FROM new_table WHERE user_name='$email'");
 if (!$result) {
-    die('Invalid query: ' . mysql_error());
+		echo $email;
+    die('Invalid query select: ' . mysql_error());
 }
 
 $row = mysql_num_rows($result);
-if (!$row) {
-    die('Invalid query: ' . mysql_error());
-}
 if($row != 0)
 {
   while($rows=mysql_fetch_assoc($result))
