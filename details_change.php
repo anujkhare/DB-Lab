@@ -2,7 +2,7 @@
 <body>
 <?php
 
-$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:ancient-tractor-91116:sql','kcm','anujkhare') or die("could not connect to database");
+$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','kcm','anujkhare') or die("could not connect to database");
 session_start();
 
 $Sec_Que = $_POST["sec_que"];
