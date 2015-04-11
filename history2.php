@@ -69,7 +69,7 @@
     </tr>
     </thead>
      <?php
-        $con = mysql_connect("localhost","root","root");
+						$con = mysql_connect(':/cloudsql/ancient-tractor-91116:ancient-tractor-91116:sql','root','') or die("could not connect to database");
                                 if(! $con)
                                 {
                                     die('Connection Failed'.mysql_error());
