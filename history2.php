@@ -1,10 +1,10 @@
 <?php
     session_start();
-    $var_value = $_SESSION['loginuser'];
     if(!isset($_SESSION['loginuser'])) 
     {
         header("Location: sign_in.html");  
     }
+    $var_value = $_SESSION['loginuser'];
 ?>
 <!DOCTYPE>
 <html>

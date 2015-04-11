@@ -15,8 +15,11 @@ $email = $_SESSION['loginuser'];
 
 
 // Select the database to use
- mysql_select_db("new_schema1") or die("could not find the database");
- $result = mysql_query("SELECT * FROM new_table WHERE user_name='$email'");
+mysql_select_db("new_schema1") or die("could not find the database");
+$result = mysql_query("SELECT * FROM new_table WHERE user_name='$email'");
+if (!$result) {
+    die('Invalid query: ' . mysql_error());
+}
 
 $row = mysql_num_rows($result);
 if($row != 0)
@@ -43,9 +46,9 @@ else if( empty($Sec_Que) && empty($pass_confirm))
 <?php }
 	 
 	 if (!mysql_query($sql,$con))
-  {
-  die('Error: ' . mysql_error());
-  }
+  	{
+  	die('Error: ' . mysql_error());
+  	}
 
                             
         						mysql_close($con);

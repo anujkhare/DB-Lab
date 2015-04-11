@@ -39,7 +39,7 @@ VALUES
 
 if (!mysql_query($sql,$con))
   {
-  //die('Error: ' . mysql_error());
+  die('Error: ' . mysql_error());
   ?>
   <script language="javascript">
     alert("You have already registered this book");

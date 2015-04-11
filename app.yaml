@@ -12,7 +12,7 @@ handlers:
   static_dir: images
 
 - url: /(.+\.php)$
-  script: index.php
+  script: sign_in.php
 
 - url: /(\w+\.html)$
   static_files: \1
