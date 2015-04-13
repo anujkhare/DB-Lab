@@ -1,6 +1,6 @@
 <?php
 //echo "hii \r\n";
-$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+$con = mysql_connect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
 session_start();
 $user = $_SESSION['varname'];
 //echo $user;

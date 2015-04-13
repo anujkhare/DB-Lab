@@ -1,8 +1,10 @@
 <html>
 <body>
 <?php
-
-$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+/*
+$con = mysql_connect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+*/
+	include('connect.php');
 session_start();
 
 $email = $_POST["usernamesignup"];

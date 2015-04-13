@@ -38,10 +38,10 @@
             </li>
             <li><a class="arrow">History</a>
 		<ul>
-                <li><a class="arrow" href="history1.php">Shared Book</a>
+                <li><a class="arrow" href="history1.php">Shared</a>
                 </li>
                 
-                <li><a class="arrow" href="history2.php">Reserved Book</a>
+                <li><a class="arrow" href="history2.php">Reserved</a>
                 </li>
             </ul>
 		</li>
@@ -69,7 +69,10 @@
     </tr>
     </thead>
      <?php
-						$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+/*
+						$con = mysql_connect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+*/
+	include('connect.php');
                                 if(! $con)
                                 {
                                     die('Connection Failed'.mysql_error());

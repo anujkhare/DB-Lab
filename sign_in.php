@@ -1,6 +1,6 @@
 <?php
 
-$con = mysql_pconnect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
+$con = mysql_connect(':/cloudsql/ancient-tractor-91116:sql','root','') or die("could not connect to database");
 // Make sure we connected successfully
 if(! $con)
 {
