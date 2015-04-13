@@ -22,5 +22,10 @@ handlers:
 - url: /
   script: sign_in.php
 
+- url: /css/fonts/(.*\.ttf)
+  mime_type: font/truetype
+  static_files: css/fonts/\1
+  upload: css/fonts/(.*\.ttf)
+
 - url: /.*
   script: not_found.php
